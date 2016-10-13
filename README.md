@@ -1,6 +1,6 @@
 # Hackathon-ui
 
-Health Care UI using Angular 2 Application
+Hackathon UI using Angular 2.
 
 $npm install
 $npm start
