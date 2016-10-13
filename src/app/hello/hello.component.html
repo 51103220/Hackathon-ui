@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="container">
+        <div>
+            <a [routerLink]="['']" class="btn btn-primary">Home Page</a>
+        </div>
+
+        <div><p class="h3">JSON</p><div>{{jsonResponse}}</div></div>
+
+        <div *ngIf="messages != null">
+            <p class="h3">{{messages.id}}</p>
+            <div>{{messages.content}}</div>
+        </div>
+    </div>
+</div>
