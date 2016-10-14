@@ -1,26 +1,32 @@
+<div *ngIf="loading == true" class="loading_screen">
+    <div class="cssload-dot"></div>
+    <div class="cssload-dot"></div>
+    <div class="cssload-dot"></div>
+    <div class="cssload-dot"></div>
+    <div class="cssload-dot"></div>
+</div>
 <div class="cont">
-  <div class="demo">
-    <div class="login">
-       <div class="login__form">
+      <div class="login_box">
+        <div class="login">
+           <div class="login_form">
            <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-                <div class="login__row" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-                  <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                <div class="login_row" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                  <svg class="login_icon name svg-icon" viewBox="0 0 20 20">
                     <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
                   </svg>
-                  <input type="text" class="login__input name" name="username" placeholder="Username" [(ngModel)]="model.username" #username="ngModel" required/>
-                  <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+                  <input type="text" class="login_input name" name="username" placeholder="Username" [(ngModel)]="model.username" #username="ngModel" required/>
                 </div>
-                <div class="login__row" [ngClass]="{ 'has-error': f.submitted && !password.valid }"> 
-                  <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div> 
+                <div class="login_row" [ngClass]="{ 'has-error': f.submitted && !password.valid }"> 
+                  <svg class="login_icon pass svg-icon" viewBox="0 0 20 20">
                     <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
                   </svg>
-                  <input type="password" name="password" class="login__input pass" placeholder="Password" [(ngModel)]="model.password" #password="ngModel" required/>
-                  <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+                  <input type="password" name="password" class="login_input pass" placeholder="Password" [(ngModel)]="model.password" #password="ngModel" required/>
                 </div>
+                <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
                 <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-                <button class="login__submit">Log in</button>
+                <button class="login_submit">Log in</button>
            </form>    
-    </div>
-   </div>
+        </div>
+       </div>
 </div>
-
